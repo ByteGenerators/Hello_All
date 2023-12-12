@@ -5,17 +5,20 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl
 
+#Python
 RUN apt-get install -y python3 python3-pip
 
+#Java
 RUN apt-get install -y default-jdk
 
+#C++
 RUN apt-get install -y gcc g++
 
+#Node
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
 
 WORKDIR /workspace
 
